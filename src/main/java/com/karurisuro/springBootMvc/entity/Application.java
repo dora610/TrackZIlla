@@ -4,6 +4,7 @@
 package com.karurisuro.springBootMvc.entity;
 
 import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,37 +13,29 @@ import jakarta.persistence.Id;
  * @author surajitkaruri
  *
  */
+
+@Entity
 public class Application {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "application_id")
 	private Long id;
-	
+
 	@Column(name = "app_name", nullable = false)
 	private String name;
-	
+
 	@Column(length = 2000)
 	private String description;
-	
-    private String owner;
 
-	public Application(Long id, String name, String description, String owner) {
-		super();
-		this.id = id;
+	private String owner;
+
+	public Application(String name, String owner, String description) {
 		this.name = name;
 		this.description = description;
 		this.owner = owner;
 	}
 
 	public Application() {
-		super();
-	}
-
-	public Application(String name, String description, String owner) {
-		super();
-		this.name = name;
-		this.description = description;
-		this.owner = owner;
 	}
 
 	public Long getId() {
@@ -81,6 +74,5 @@ public class Application {
 	public String toString() {
 		return "Application [id=" + id + ", name=" + name + ", description=" + description + ", owner=" + owner + "]";
 	}
-    
-    
+
 }
