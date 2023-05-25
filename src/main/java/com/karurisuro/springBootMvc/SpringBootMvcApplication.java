@@ -31,22 +31,22 @@ public class SpringBootMvcApplication {
 //			repo.save(app2);
 //			repo.save(app3);
 			
-			repo.save(new Application("Backlogs","karen.kane","Application to track backlogs"));
+//			repo.save(new Application("Backlogs","karen.kane","Application to track backlogs"));
 			
-			repo.findAll().stream().map(Application::toString).forEach(log::info);
-			
-			
-			log.info("Get application by name");
-			repo.findByName("Trackzilla")
-				.ifPresentOrElse(
-					a -> log.info(a.toString()), 
-					()-> log.error("Application not found"));
-			
-			log.info("Find by owner");
-			repo.findByOwner("karen.kane")
-				.stream()
-				.map(Application::toString)
-				.forEach(log::info);
+//			repo.findAll().stream().map(Application::toString).forEach(log::info);
+//			
+//			
+//			log.info("Get application by name");
+//			repo.findByName("Trackzilla")
+//				.ifPresentOrElse(
+//					a -> log.info(a.toString()), 
+//					()-> log.error("Application not found"));
+//			
+//			log.info("Find by owner");
+//			repo.findByOwner("karen.kane")
+//				.stream()
+//				.map(Application::toString)
+//				.forEach(log::info);
 		};
 	}
 
